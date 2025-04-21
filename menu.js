@@ -1,16 +1,21 @@
+let btnMenu = document.getElementById('btn-menu');
+let menu = document.getElementById('menu-mobile');
+let overlay = document.getElementById('overlay-menu');
 
-let btnMenu = document.getElementById('btn-menu')
-let menu = document.getElementById('menu-mobile')
-let overlay = document.getElementById('overlay-menu')
+// Abre o menu
+btnMenu.addEventListener('click', () => {
+    menu.classList.add('abrir-menu');
+    overlay.style.display = 'block';
+});
 
-btnMenu.addEventListener('click', ()=>{
-    menu.classList.add('abrir-menu')
-})
+// Fecha o menu ao clicar no próprio menu
+menu.addEventListener('click', () => {
+    menu.classList.remove('abrir-menu');
+    overlay.style.display = 'none';
+});
 
-menu.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')
-})
-
-overlay.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')
-})
+// Fecha o menu ao clicar fora (overlay)
+overlay.addEventListener('click', () => {
+    menu.classList.remove('abrir-menu');
+    overlay.style.display = 'none';
+});
